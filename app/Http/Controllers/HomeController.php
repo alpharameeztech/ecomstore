@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\ProductRepository;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    protected $productRepository;
+
+    public function __construct(ProductRepository $productRepository){
+        $this->productRepository = $productRepository;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +19,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $products =  $this->productRepository->get(6);
+        return view('home',[
+            'products' => $products
+        ]);
     }
 
     /**
