@@ -18,4 +18,12 @@ class ProductRepository implements ProductInterface
 
     }
 
+    public function all($paginate)
+    {
+
+        return Product::paginate($paginate);
+
+
+    }
+
 }

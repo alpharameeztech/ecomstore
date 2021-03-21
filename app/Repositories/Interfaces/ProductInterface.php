@@ -6,5 +6,7 @@ use App\Models\Product;
 
 interface ProductInterface
 {
-    public function get($location='store-left-section');
+    public function get($limit);
+    public function all($paginate);
+
 }
