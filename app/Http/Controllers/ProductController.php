@@ -59,7 +59,7 @@ class ProductController extends Controller
      */
     public function show($slug)
     {
-        $product = Product::where('slug', $slug)->firstOrFail();
+        $product = $this->productRepository->getBySlug($slug);
         return view('products.show',[
            'product' => $product
         ]);

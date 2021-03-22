@@ -8,5 +8,5 @@ interface ProductInterface
 {
     public function get($limit);
     public function all($paginate);
-
+    public function getBySlug($slug);
 }

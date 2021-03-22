@@ -20,10 +20,11 @@ class ProductRepository implements ProductInterface
 
     public function all($paginate)
     {
-
         return Product::paginate($paginate);
-
-
     }
 
+    public function getBySlug($slug)
+    {
+        return $product = Product::where('slug', $slug)->firstOrFail();
+    }
 }
