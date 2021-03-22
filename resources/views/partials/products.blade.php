@@ -11,7 +11,7 @@
                 <!-- Article -->
                 <article class="overflow-hidden rounded-lg shadow-lg">
 
-                    <a href="#">
+                    <a href="{{ route('product.show', $product->slug) }}">
                         <img alt="Placeholder" class="block h-auto w-full" src="https://picsum.photos/600/400/?random">
                     </a>
 
