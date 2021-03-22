@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::get('/products', 'App\Http\Controllers\ProductController@index')->name('products.index');
 Route::get('/product/{product}', 'App\Http\Controllers\ProductController@show')->name('product.show');
+Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('cart.index');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
