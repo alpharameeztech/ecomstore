@@ -17,7 +17,7 @@
 
                     <header class="flex items-center justify-between leading-tight p-2 md:p-4">
                         <h1 class="text-lg">
-                            <a class="no-underline hover:underline text-black" href="#">
+                            <a class="no-underline hover:underline text-black" href="{{ route('product.show', $product->slug) }}">
                                 {{ $product->name }}
                             </a>
                         </h1>
@@ -27,17 +27,25 @@
                     </header>
 
                     <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-                        <a class="flex items-center no-underline hover:underline text-black" href="#">
+                        <a class="flex items-center no-underline hover:underline text-black" href="{{ route('product.show', $product->slug) }}">
 {{--                            <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random">--}}
                             <p class="ml-2 text-sm">
                                {{ $product->sub_title }}
                             </p>
                         </a>
-                        <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
+                        <a class="no-underline text-grey-darker hover:text-red-dark" href="{{ route('product.show', $product->slug) }}">
                             <span class="hidden">Like</span>
                             <i class="fa fa-heart"></i>
                         </a>
                     </footer>
+
+                    <div class="flex justify-center">
+                        <button
+                            class="mb-8 px-6 py-2 transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
+                            Add to cart
+                        </button>
+                    </div>
+
 
                 </article>
                 <!-- END Article -->
